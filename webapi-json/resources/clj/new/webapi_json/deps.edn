@@ -1,0 +1,28 @@
+{:paths ["resources" "src"]
+ :deps {org.clojure/clojure {:mvn/version "1.10.1"}
+        seancorfield/clj-new
+        {:git/url "https://github.com/seancorfield/clj-new"
+         :sha "492bb2e7ad7373a8b5958124a86cddc4c7a123d5"
+         :exclusions [org.slf4j/jcl-over-slf4j org.slf4j/slf4j-nop]}
+        ring/ring-core {:mvn/version "1.8.0"}
+        ring/ring-jetty-adapter {:mvn/version "1.8.0"}
+        ring/ring-defaults {:mvn/version "0.3.2"}
+        ring/ring-json {:mvn/version "0.5.0"}
+        metosin/ring-http-response {:mvn/version "0.9.1"}
+        compojure {:mvn/version "1.6.1"}
+        org.clojure/tools.logging {:mvn/version "0.5.0"}
+        org.slf4j/slf4j-api {:mvn/version "1.7.28"}
+        ch.qos.logback/logback-classic {:mvn/version "1.2.3"}}
+ :aliases
+ {:uberjar {:extra-deps {luchiniatwork/cambada {:mvn/version "1.0.0"}}
+            :main-opts ["-m" "cambada.uberjar"
+                        "--app-artifact-id" "{{name}}"
+                        "-m" "{{name}}"]}
+  :test {:extra-paths ["test"]
+         :extra-deps {org.clojure/test.check {:mvn/version "0.10.0"}}}
+  :runner
+  {:extra-deps {com.cognitect/test-runner
+                {:git/url "https://github.com/cognitect-labs/test-runner"
+                 :sha "76568540e7f40268ad2b646110f237a60295fa3c"}}
+   :main-opts ["-m" "cognitect.test-runner"
+               "-d" "test"]}}}
