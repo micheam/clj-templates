@@ -9,7 +9,7 @@ $ clj -Sdeps '{:deps
               {seancorfield/clj-new
                 {:mvn/version "0.7.8"}}}' \
   -m clj-new.create \
-  https://github.com/micheam/clj-templates/webapi-json@f86f6bd767d1eb914855b3bcf30852e0b738c09f \
+  https://github.com/micheam/clj-templates/webapi-json@8111017566a4f7b8e2d457df01cd564ea622a88c \
   yourname/appname
 ```
 
