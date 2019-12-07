@@ -1,4 +1,4 @@
-(ns {{namespace}} .web.handler
+(ns {{namespace}}.web.handler
     (:require
      [clojure.tools.logging :as log]
      [ring.util.http-response :as resp]))
